@@ -115,7 +115,9 @@
 
             breadcrumbs_container.empty();
             breadcrumbsArr.reverse().forEach((value) => {
-                breadcrumbs_container.append('<span class="crumb"><a id="breadcumbLinks" href="#">' + value + '</span>');
+                console.log(breadcrumbsArr);
+                console.log(value);
+                breadcrumbs_container.append('<span class="crumb"><a id="breadcumbLinks" href="#" onclick="fillClickableBreadcumb(' + [breadcrumbsArr] + ',' + value +')">' + value + '</span>');
             });
 
         }
@@ -277,6 +279,12 @@
             fillDescrition(dataDesertificacao);
 
         });
+        fillClickableBreadcumb = (array, element)=> {            
+            var index = array.indexOf(element);
+            $("breadcumbLinks").on('click', ()=> {
+                sunburst($("#chart"[index]));
+            });
+        }
         $('#navbar li').on("click", () => {
             stopPeddingRequests();
         });
