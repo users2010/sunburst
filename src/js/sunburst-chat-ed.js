@@ -187,7 +187,10 @@
         }
       }
     }
-  
+
+    function focusOnSelectedNode(value) {
+      focusOnNodeGlobal.focusOnNode(value);
+    }  
     function bindKey(parent, group, enter, update, exit, data, key) {
       var i,
           node,

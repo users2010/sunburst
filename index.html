@@ -57,15 +57,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="footer" class="footer">
-        <div id="img1" class="footer-image1">
-            <img class="footer-images" src="./src/images/portal.svg" alt="">
-        </div>
-        <div id="img2" class="footer-image2">
-            <img class="footer-images" src="./src/images/insa.svg" alt="">
-        </div>
-    </div>    
+    </div>  
 
     <!-- TODO download this scripts (Issue 1) -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
@@ -82,6 +74,11 @@
         const GEONODE_URL = 'http://sades.insa.gov.br';
         const GEOSERVER_URL = 'http://sades.insa.gov.br/geoserver/ows/';
         const DEFAULT_LAYER_OPACITY = 0.85;
+
+        getArrayIndex = (array, element) => {
+            return array.indexOf(element);
+        }
+
         changeAdvancedButton = (imgName) => {
             let url = GEONODE_URL + '/maps/new?layer=' + imgName;
             $('#advanced-button').attr("href", url);
@@ -114,12 +111,13 @@
         }
         fillBreadcrumbs = (data) => {
             let breadcrumbsArr = getNameArray(data.__dataNode, []);
-            let breadcrumbs_container = $("#breadcrumbs");
+            let breadcrumbs_container = $("#breadcrumbs");            
 
             breadcrumbs_container.empty();
             breadcrumbsArr.reverse().forEach((value) => {
-                breadcrumbs_container.append('<span class="crumb">' + value + '</span>');
+                breadcrumbs_container.append('<span class="crumb"><a id="breadcumbLinks" href="#">' + value + '</span>');
             });
+
         }
         getNameArray = (data, array) => {
             array = array || [];
@@ -204,6 +202,7 @@
                 return DEFAULT_SIZE;
             }
         };
+
         stopPeddingRequests = () => {
             window.stop();
         }
@@ -218,6 +217,7 @@
             let map = new ol.Map({
                 layers: [defaultL, rootLayer],
                 target: "map",
+                pixelRatio: 1,
                 view: new ol.View({
                     center: [-4615573.515972, -794945.094166],
                     zoom: 5
@@ -275,6 +275,7 @@
             fillBreadcrumbs(dataDesertificacao);
             fillLegend(initialImgNameLayer);
             fillDescrition(dataDesertificacao);
+
         });
         $('#navbar li').on("click", () => {
             stopPeddingRequests();
@@ -295,6 +296,5 @@
             }
         });    
     </script>
-
 </body>
 </html>
