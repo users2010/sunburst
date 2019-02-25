@@ -1,5 +1,5 @@
-const GEONODE_URL = "http://sades.insa.gov.br";
-const GEOSERVER_URL = "http://sades.insa.gov.br/geoserver/ows/";
+const GEONODE_URL = "http://150.165.85.9";
+const GEOSERVER_URL = "http://150.165.85.9/geoserver/ows/";
 const DEFAULT_LAYER_OPACITY = 0.85;
 
 changeAdvancedButton = imgName => {
@@ -41,11 +41,7 @@ fillBreadcrumbs = data => {
   breadcrumbs_container.empty();
   breadcrumbsArr.reverse().forEach(value => {
     breadcrumbs_container.append(
-      '<span class="crumb"><a id="breadcumbLinks" href="#" onclick="fillClickableBreadcumb(\'' +
-        breadcrumbsArr +
-        '\')"">' +
-        value +
-        "</span>"
+      '<span class="crumb"><a id="breadcumbLinks" href="#">' + value + "</span>"
     );
   });
 };
@@ -138,6 +134,21 @@ stopPeddingRequests = () => {
 };
 let sunburst;
 $(document).ready(() => {
+
+  let sabLayer = new ol.layer.Tile({
+    opacity: 0.25,
+    visible: true,
+    source: new ol.source.TileWMS({
+      url: GEOSERVER_URL,
+      params: {
+        LAYERS: 'geonode:lim_semiarido_municipal_oficial',
+        TILED: "true"
+      },
+      ratio: 3,
+      serverType: "geoserver"
+    })
+  });
+
   let defaultL = new ol.layer.Tile({
     source: new ol.source.OSM()
   });
@@ -145,7 +156,7 @@ $(document).ready(() => {
   let rootLayer = createLayer(initialImgNameLayer);
   // TODO (refactoring) put the center parameters in a constant (Issue 4)
   let map = new ol.Map({
-    layers: [defaultL, rootLayer],
+    layers: [defaultL, rootLayer, sabLayer],
     target: "map",
     pixelRatio: 1,
     view: new ol.View({
@@ -194,6 +205,7 @@ $(document).ready(() => {
     let layer1 = createLayer(imgName);
     map.addLayer(defaultL);
     map.addLayer(layer1);
+    map.addLayer(sabLayer);
 
     changeAdvancedButton(choosenData.imgName);
     fillBreadcrumbs(choosenData);
@@ -207,33 +219,6 @@ $(document).ready(() => {
   fillDescrition(dataDesertificacao);
 });
 
-fillClickableBreadcumb = (array, value) => {
-  console.log("debug #1");
-  console.log(array);
-  console.log(value);
-  indexOf = array.indexOf(value);
-  console.log(indexOf);
-  console.log("debug #2");
-  sunburst.onNodeClick(array => {
-    let imgName = choosenData.imgName;
-    if (currentLayer === imgName) {
-      console.log("The same image. Do nothing.");
-      return;
-    }
-    stopPeddingRequests();
-    map.getLayers().clear();
-    sunburst.focusOnNode(choosenData);
-
-    let layer1 = createLayer(imgName);
-    map.addLayer(defaultL);
-    map.addLayer(layer1);
-
-    changeAdvancedButton(choosenData.imgName);
-    fillBreadcrumbs(choosenData);
-    fillLegend(choosenData.imgName);
-    fillDescrition(choosenData);
-  });
-};
 $("#navbar li").on("click", () => {
   stopPeddingRequests();
 });
