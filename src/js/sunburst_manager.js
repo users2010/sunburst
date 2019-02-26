@@ -149,6 +149,20 @@ $(document).ready(() => {
     })
   });
 
+  let aguasLayer = new ol.layer.Tile({
+    opacity: 0.50,
+    visible: true,
+    source: new ol.source.TileWMS({
+      url: GEOSERVER_URL,
+      params: {
+        LAYERS: 'geonode:geoft_bho_massa_dagua',
+        TILED: "true"
+      },
+      ratio: 3,
+      serverType: "geoserver"
+    })
+  });
+
   let defaultL = new ol.layer.Tile({
     source: new ol.source.OSM()
   });
@@ -156,7 +170,7 @@ $(document).ready(() => {
   let rootLayer = createLayer(initialImgNameLayer);
   // TODO (refactoring) put the center parameters in a constant (Issue 4)
   let map = new ol.Map({
-    layers: [defaultL, rootLayer, sabLayer],
+    layers: [defaultL, rootLayer, aguasLayer, sabLayer],
     target: "map",
     pixelRatio: 1,
     view: new ol.View({
@@ -205,6 +219,7 @@ $(document).ready(() => {
     let layer1 = createLayer(imgName);
     map.addLayer(defaultL);
     map.addLayer(layer1);
+    map.addLayer(aguasLayer);
     map.addLayer(sabLayer);
 
     changeAdvancedButton(choosenData.imgName);
