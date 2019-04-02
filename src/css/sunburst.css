@@ -4,8 +4,14 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: qanelas;
+  src: url(../font/qanelas-bold.otf);
+}
+
 body {
-  font-family: qanelas-bold;
+  font-family: qanelas;
+  overflow: scroll;
 }
 
 .container {
