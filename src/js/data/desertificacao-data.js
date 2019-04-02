@@ -39,7 +39,7 @@ var dataDesertificacao = {
               color: "level_four_condicao_ambiental_color",
               labelColor: "black", 
               level: 4,                 
-              imgName: "geonode:spi",
+              imgName: "geonode:newnew_spi",
               size: 3.3
             },
             {
@@ -126,7 +126,7 @@ var dataDesertificacao = {
               labelColor: "white",  
               level: 4,   
               size: 5,
-              imgName: "geonode:dprur",                    
+              imgName: "geonode:dprur_1",                    
             },
             {
               name: "Estabelecimentos Rurais Dirigidos por Mulheres",
@@ -165,7 +165,7 @@ var dataDesertificacao = {
               color: "level_four_condicao_terra_color",
               labelColor: "black",                     
               level: 4,   
-              imgName: "geonode:aemmf2", 
+              imgName: "geonode:aemmf", 
               size: 3.3
             },
             {

@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- TODO download this css (Issue 1) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css"
-    />
-    <link rel="stylesheet" href="./src/css/sunburst.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sunburst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./src/css/ol-min.css" />
+  <link rel="stylesheet" href="./src/css/ol-geocoder-ed.css" />
+  <link rel="stylesheet" href="./src/css/sunburst.css" />
+</head>
 
-  <body>
-    <div class="content">
-      <div id="breadcrumbs" class="crumbs breadcrumb">
-        <span class="crumb"></span>
-      </div>
-      <div id="container-chart" class="container-chart">
-        <div id="chart" class="chart"></div>
-      </div>
-      <div>
-        <div class="container-map">
-          <div id="map-loader">
-            <div class="loader"></div>
+<body style="margin: 0px">
+  <div class="navbar">
+    <img src="./src/img/insa.svg" />
+  </div>
+  <div class="content">
+    <div id="breadcrumbs" class="crumbs breadcrumb">
+      <span class="crumb"></span>
+    </div>
+    <div id="container-chart" class="container-chart">
+      <div id="chart" class="chart"></div>
+    </div>
+    <div>
+      <div class="container-map">
+        <div id="map-loader">
+          <div class="loader"></div>
+        </div>
+        <div id="map" class="map">
+          <div class="advanced-button-control">
+            <a id="advanced-button" class="advanced-button button" target="_blank"></a>
           </div>
-          <div id="map" class="map">
-            <div class="advanced-button-control">
-              <a
-                id="advanced-button"
-                class="advanced-button button"
-                target="_blank"
-              ></a>
-            </div>
+        </div>
+        <div id="container-description" class="container-description">
+          <div id="description-loader">
+            <div class="loader2"></div>
           </div>
-          <div id="container-description" class="container-description">
-            <div id="description-loader">
-              <div class="loader2"></div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="container-description-row">
-                  <label id="container-title-row-content"></label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="container-description-row">
-                  <div
-                    id="container-description-row-content"
-                    class="container-description-row-content"
-                  ></div>
-                </div>
+          <div class="row">
+            <div class="col">
+              <div class="container-description-row">
+                <label id="container-title-row-content"></label>
               </div>
             </div>
           </div>
-          <div id="container-legend" class="container-legend">
-            <div id="legend-loader">
-              <div class="loader2"></div>
+          <div class="row">
+            <div class="col">
+              <div class="container-description-row">
+                <div id="container-description-row-content" class="container-description-row-content"></div>
+              </div>
             </div>
-            <label>Legenda </label>
-            <img id="legend-image" />
           </div>
+          <div class="row">
+            <div class="col">
+              <strong>Para mais informações, veja esse documento:</strong>
+              <a target="_blank" href="https://docs.google.com/document/d/14x6lNYCovPPyA055DAgCe1ZqYIDNd5mwCiec_NUKgkM/edit?usp=sharing">
+                <i>aqui</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="container-legend" class="container-legend">
+          <div id="legend-loader">
+            <div class="loader2"></div>
+          </div>
+          <label>Legenda </label>
+          <img id="legend-image">
         </div>
       </div>
     </div>
 
-    <!-- TODO download this scripts (Issue 1) -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="./src/js/vendor/polyfill-v2-min.js"></script>
+    <script src="./src/js/vendor/jquery-3.3.1-min.js"></script>
+    <script src="./src/js/vendor/d3.v5-min.js"></script>
+    <script src="./src/js/vendor/ol-min.js"></script>
     <script src="./src/js/sunburst-chat-ed.js"></script>
     <script src="./src/js/data/desertificacao-data.js"></script>
-    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="./src/js/vendor/d3.v5.min.js"></script>
+    <script src="./src/js/vendor/ol-geocoder-min.js"></script>
+    <script src="./src/js/loading.js"></script>
+    <script src="./src/js/sunburst-constants.js"></script>
+    <script src="./src/js/breadcrumb-manager.js"></script>
+    <script src="./src/js/data-visualization-manager.js"></script>
+    <script src="./src/js/maps-manager.js"></script>
+    <script src="./src/js/sunburst-manager.js"></script>
+</body>
 
-    <link href="./src/css/ol-geocoder-ed.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/ol-geocoder"></script>
-    <script src="./src/js/sunburst_manager.js"></script>
-  </body>
 </html>
