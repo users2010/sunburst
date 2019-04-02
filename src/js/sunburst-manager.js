@@ -1,11 +1,6 @@
 let sunburst;
 let currentChoosenData;
 
-changeAdvancedButton = (imgName) => {
-	let url = window.location.protocol + '//' + window.location.hostname + '/maps/new?layer=' + imgName;
-	$('#advanced-button').attr('href', url);
-};
-
 calculateChartSize = () => {
 	const DEFAULT_PERCENT_SIZE = 0.9;
 	const DEFAULT_SIZE = 400;
@@ -32,7 +27,6 @@ updateSunburst = (map, sunburst, choosenData, defaultL, aguasLayer, sabLayer, la
 	map.getLayers().clear();	
 
     addLayersToMap(imd_layer);
-	changeAdvancedButton(imd_layer);
 	fillBreadcrumbs(map, sunburst, choosenData, defaultL, aguasLayer, sabLayer, layerTitle);
 	fillLegend(imd_layer);
 	fillDescription(choosenData);
@@ -103,7 +97,6 @@ $(document).ready(() => {
 	})
 
 	sunburst($('#chart')[0]);
-	changeAdvancedButton(initialImgNameLayer);
 	fillBreadcrumbs(map, sunburst, dataDesertificacao, defaultL, aguasLayer, sabLayer, layerTitle);
 	fillLegend(initialImgNameLayer);
 	fillDescription(dataDesertificacao);

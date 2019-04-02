@@ -43,7 +43,7 @@ fillDescription = (data) => {
   let descriptionLoaderElement = $('#description-loader');
   descriptionLoaderElement.show();
 
-  let url = window.location.protocol + '//' + window.location.hostname + '/layers/' + data.imgName + '/metadata_detail_rest';
+  let url = GEONODE_URL + '/layers/' + data.imgName + '/metadata_detail_rest';
   $.get(url)
   .done(function (data) {
     $(titleContentEl).text(data.title);
