@@ -1,4 +1,4 @@
-const GEOSERVER_URL = 'http://150.165.85.9/geoserver/ows/'
+const GEOSERVER_URL = 'http://150.165.85.9/geoserver/ows'
 const GEONODE_URL = 'http://150.165.85.9'
 
 const DEFAULT_LAYER_OPACITY = 0.85;
