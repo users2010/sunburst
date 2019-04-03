@@ -85,7 +85,7 @@ body {
   border-top: 4px solid transparent;
   border-left: 6px solid #658ed0;
   border-bottom: 4px solid transparent;
-  top: 18px;
+  top: 15px;
   right: -5px;
 }
 
@@ -131,10 +131,6 @@ body {
 
 .container-description-row-content {
   float: left;
-}
-
-.row {
-  padding-left: 3%;
 }
 
 .panel {
