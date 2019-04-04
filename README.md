@@ -1,12 +1,13 @@
 # Sunburst
-This page was separated of the SADes aplication (INSA).
+This repository represent the Sunburst page what was separated of the SADes aplication (INSA).
 
 ### NOTE 
 Is necessary a refactoring because only was moved from the SADes to this repository.
 
 ## Pre-Instalation
-1 - Install NODE
-2 - Install NPM
+1. Install node
+2. Install npm
+3. Install git
 
 ## Instalation 
 ```
@@ -20,11 +21,11 @@ Set the GEONODE and GEOSERVERS in the file 'src/js/sunburst-constants.js'
 
 Example: 
 ```
-const GEOSERVER_URL = 'http://{ip}/geoserver/ows/'
-const GEONODE_URL = 'http://{ip}'
+const GEOSERVER_URL = 'http://0.0.0.0/geoserver'
+const GEONODE_URL = 'http://0.0.0.0'
 ```
 
-Set the port to the serser in the file ".env" in the root of project. Look the example in the file ".env.example"
+(Optional) Set the port to the server a file called ".env" in the root of project. Look the example in the file ".env.example"
 ```
 PORT=80
 ```
