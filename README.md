@@ -5,8 +5,8 @@ This repository represent the Sunburst page what was separated of the SADes apli
 Is necessary a refactoring because only was moved from the SADes to this repository.
 
 ## Pre-Instalation
-1. Install [NODE and NPM](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/)
-3. Install GIT
+1. Install NODE and NPM. [Ubuntu and Debian](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/) / [Centos](https://github.com/nodesource/distributions).
+2. Install GIT
 
 ## Instalation 
 ```
