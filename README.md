@@ -1,5 +1,5 @@
 # Sunburst
-This repository represent the Sunburst page what was separated of the SADes aplication (INSA).
+This repository represent the Sunburst page what was separated of the SADes application (INSA).
 
 ### NOTE 
 Is necessary a refactoring because only was moved from the SADes to this repository.
@@ -24,8 +24,9 @@ const GEOSERVER_URL = 'http://0.0.0.0/geoserver'
 const GEONODE_URL = 'http://0.0.0.0'
 ```
 
-(Optional) Set the port to the server a file called ".env" in the root of project. Look the example in the file ".env.example"
+(Optional) Set the port to the server a file called ".env" in the root of project. Look the example in the file ".env.example".
 ```
+# Default : 4200
 PORT=80
 ```
 
