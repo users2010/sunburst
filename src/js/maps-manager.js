@@ -44,7 +44,7 @@ const sabLayer = new ol.layer.Tile({
     source: new ol.source.TileWMS({
         url: GEOSERVER_URL,
         params: {
-        LAYERS: 'geonode:lim_semiarido_municipal_oficial',
+        LAYERS: LAYER_LIMIT_CITY,
         TILED: "true"
         },
         ratio: 3,
@@ -57,7 +57,7 @@ visible: true,
     source: new ol.source.TileWMS({
         url: GEOSERVER_URL,
         params: {
-        LAYERS: 'geonode:massa_dagua_sab',
+        LAYERS: LAYER_LIMIT_WATER,
         TILED: "true"
         },
         ratio: 3,

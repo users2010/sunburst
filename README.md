@@ -16,12 +16,21 @@ Is necessary a refactoring because only was moved from the SADes to this reposit
 ```
 
 ## Configure
-Set the GEONODE and GEOSERVERS in the file 'src/js/sunburst-constants.js'
+Set properties in the file 'src/js/sunburst-constants.js'
 
 Example: 
 ```
+# URL Geoserver
 const GEOSERVER_URL = 'http://0.0.0.0/geoserver'
+# URL Geonode
 const GEONODE_URL = 'http://0.0.0.0'
+
+# Layer name in the geonode
+# City limits
+const LAYER_LIMIT_CITY='geonode:limites_municipio'
+# Layer name in the geonode
+# Water occurrence
+const LAYER_LIMIT_WATER='geonode:massa_daqua'
 ```
 
 (Optional) Set the port to the server a file called ".env" in the root of project. Look the example in the file ".env.example".
