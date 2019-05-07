@@ -1,6 +1,8 @@
 # Sunburst
 This repository represent the Sunburst page what was separated of the [SADes](https://github.com/simsab-ufcg/geonode) application (INSA). This webpage contains a visualization of the semi-arid desertification.
 
+![sunbust_main_page](docs/images/sunbust_main_page.png)
+
 #### NOTE 
 Is necessary a refactoring because only was moved from the SADes to this repository.
 
@@ -39,7 +41,10 @@ const LAYER_LIMIT_CITY='geonode:limites_municipio'
 # Water occurrence
 const LAYER_LIMIT_WATER='geonode:massa_daqua'
 ```
-Set Semi-Arid Desertification Layers properties in the fil 'src/js/data/desertificacao-data.js'.
+Set Semi-Arid Desertification Layers properties in the file 'src/js/data/desertificacao-data.js'. <br/>
+The level of the Sunburst component is related with the file 'src/js/data/desertificacao-data.js'. 
+![level_sun](docs/images/level_sun.png)
+Example: 
 ```
 .
 . Begin
@@ -86,10 +91,12 @@ PORT=80
 
 ## Run
 ```
+  cd {path}/sunburst
   npm start &
 ```
 
 ## Stop
 ```
+  cd {path}/sunburst
   npm stop
 ```
